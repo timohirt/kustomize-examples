@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: price-service-deployment
+  labels:
+    app: price-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: price-service
+  template:
+    metadata:
+      labels:
+        app: price-service
+    spec:
+      containers:
+      - name: price-service
+        image: price-service:12.34
